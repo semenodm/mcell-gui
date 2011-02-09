@@ -1,0 +1,20 @@
+
+h1. getGrailsAttributes
+
+h2. Purpose
+
+
+
+h2. Examples
+
+{code:java}
+foo.getGrailsAttributes()
+{code}
+
+h2. Description
+
+
+
+Arguments:
+
+[]

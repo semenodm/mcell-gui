@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ImageViewer" default="all" basedir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui">
+	<description>
+		This is build file for GWT module 'com.palmagroup.gwt.orders.Orders' deployment.
+		GWT Designer generates it each time when you initiate deployment.
+		
+		You can use this file later for manual deployment, but keep in mind, that
+		classpath is hardcoded in it, so after changes in classpath you should
+		regenerate build file.
+	</description>
+
+	<property name="gwt.home" value="/home/dsemenov/java/gwt-2.1.0" />
+	<property name="gwt.module.id" value="com.palmagroup.gwt.orders.Orders" />
+	<property name="war.name" value="Orders.war" />
+
+	<target name="jars" description="Package up the module project and required projects as jars">
+		<mkdir dir="war/WEB-INF/lib" />
+		<!--=== com.palmagroup.mcell-gui ===-->
+		<jar destfile='src/main/webapp/WEB-INF/lib/com.palmagroup.mcell-gui.jar'>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/conf">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/controllers">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/domain">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/services">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/taglib">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/utils">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/groovy">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/java">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/main/resources">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/test/unit">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/test/integration">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/gwt">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/test-classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/test-classes">
+				<include name="**/*.class"/>
+			</fileset>
+			<fileset dir="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes">
+				<include name="**/*.class"/>
+			</fileset>
+		</jar>
+		<copy todir='src/main/webapp/WEB-INF/lib'>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/test-classes"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/test-classes"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-bootstrap/1.3.4/grails-bootstrap-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/codehaus/groovy/groovy-all/1.7.4/groovy-all-1.7.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.8/jcl-over-slf4j-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/slf4j/jul-to-slf4j/1.5.8/jul-to-slf4j-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-crud/1.3.4/grails-crud-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-core/3.0.3.RELEASE/spring-core-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-asm/3.0.3.RELEASE/spring-asm-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-context/3.0.3.RELEASE/spring-context-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-aop/3.0.3.RELEASE/spring-aop-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-beans/3.0.3.RELEASE/spring-beans-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-expression/3.0.3.RELEASE/spring-expression-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-core/1.3.4/grails-core-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-pool/commons-pool/1.5.3/commons-pool-1.5.3.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-io/commons-io/1.4/commons-io-1.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-aspects/3.0.3.RELEASE/spring-aspects-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-context-support/3.0.3.RELEASE/spring-context-support-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-instrument/3.0.3.RELEASE/spring-instrument-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-jdbc/3.0.3.RELEASE/spring-jdbc-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-tx/3.0.3.RELEASE/spring-tx-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-jms/3.0.3.RELEASE/spring-jms-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-orm/3.0.3.RELEASE/spring-orm-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-oxm/3.0.3.RELEASE/spring-oxm-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-web/3.0.3.RELEASE/spring-web-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-webmvc/3.0.3.RELEASE/spring-webmvc-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-spring/1.3.4/grails-spring-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-resources/1.3.4/grails-resources-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-web/1.3.4/grails-web-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/opensymphony/sitemesh/2.4/sitemesh-2.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/xpp3/xpp3_min/1.1.3.4.O/xpp3_min-1.1.3.4.O.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-gorm/1.3.4/grails-gorm-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/hibernate/hibernate-core/3.3.1.GA/hibernate-core-3.3.1.GA.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/grails/grails-test/1.3.4/grails-test-1.3.4.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/springframework/spring-test/3.0.3.RELEASE/spring-test-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/taglibs/standard/1.1.2/standard-1.1.2.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/hibernate/hibernate-ehcache/3.3.1.GA/hibernate-ehcache-3.3.1.GA.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/net/sf/ehcache/ehcache-core/1.7.1/ehcache-core-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/slf4j/slf4j-log4j12/1.5.8/slf4j-log4j12-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/org/aspectj/aspectjrt/1.6.8/aspectjrt-1.6.8.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/com/google/gwt/inject/gin/1.0/gin-1.0.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/com/google/inject/guice/2.0/guice-2.0.jar"/>
+			<fileset file="/home/dsemenov/.m2/repository/com/extjs/gxt/2.2.0/gxt-2.2.0.jar"/>
+			<fileset file="/home/dsemenov/java/jdk1.6.0_16/lib/tools.jar"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/main/webapp/WEB-INF/lib/gwt-servlet.jar"/>
+			<fileset file="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/main/webapp/WEB-INF/classes"/>
+			<fileset file="/home/dsemenov/java/gwt-2.1.0/gwt-dev.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.codehaus.gpars/gpars/jars/gpars-0.9.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.tmatesoft.svnkit/svnkit/jars/svnkit-1.3.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.apache.ant/ant/jars/ant-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-launcher/jars/ant-launcher-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-junit/jars/ant-junit-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-nodeps/jars/ant-nodeps-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-trax/jars/ant-trax-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/jline/jline/jars/jline-0.9.94.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.fusesource.jansi/jansi/jars/jansi-1.2.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/xalan/serializer/jars/serializer-2.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-docs/jars/grails-docs-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-bootstrap/jars/grails-bootstrap-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-scripts/jars/grails-scripts-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-core/jars/grails-core-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-resources/jars/grails-resources-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-web/jars/grails-web-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.slf4j/slf4j-log4j12/jars/slf4j-log4j12-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.test/jars/org.springframework.test-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.0_jdk5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.codehaus.groovy/groovy-all/jars/groovy-all-1.7.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-beanutils/commons-beanutils/jars/commons-beanutils-1.8.0.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-el/commons-el/jars/commons-el-1.0.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-validator/commons-validator/jars/commons-validator-1.3.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.3.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-io/commons-io/jars/commons-io-1.4.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-lang/commons-lang/jars/commons-lang-2.4.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.hibernate/ejb3-persistence/jars/ejb3-persistence-1.0.2.GA.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/opensymphony/sitemesh/jars/sitemesh-2.4.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-crud/jars/grails-crud-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-gorm/jars/grails-gorm-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-spring/jars/grails-spring-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.core/jars/org.springframework.core-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.aop/jars/org.springframework.aop-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.aspects/jars/org.springframework.aspects-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.asm/jars/org.springframework.asm-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.beans/jars/org.springframework.beans-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.context/jars/org.springframework.context-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.context.support/jars/org.springframework.context.support-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.expression/jars/org.springframework.expression-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.instrument/jars/org.springframework.instrument-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.jdbc/jars/org.springframework.jdbc-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.jms/jars/org.springframework.jms-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.orm/jars/org.springframework.orm-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.oxm/jars/org.springframework.oxm-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.transaction/jars/org.springframework.transaction-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.web/jars/org.springframework.web-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.web.servlet/jars/org.springframework.web.servlet-3.0.3.RELEASE.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/cglib/cglib-nodep/jars/cglib-nodep-2.1_3.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-fileupload/commons-fileupload/jars/commons-fileupload-1.2.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/oro/oro/jars/oro-2.0.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/javax.servlet/jstl/jars/jstl-1.1.2.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-dbcp/commons-dbcp/jars/commons-dbcp-1.2.2.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.5.3.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/hsqldb/hsqldb/jars/hsqldb-1.8.0.10.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/log4j/log4j/jars/log4j-1.2.16.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.5.8.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/apache-taglibs/standard/jars/standard-1.1.2.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.3.4.O.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/junit/junit/jars/junit-4.8.1.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/org.grails/grails-test/jars/grails-test-1.3.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/javax.servlet/servlet-api/jars/servlet-api-2.5.jar"/>
+			<fileset file="/home/dsemenov/.ivy2/cache/javax.servlet/jsp-api/jars/jsp-api-2.1.jar"/>
+		</copy>		
+	</target>
+
+	<target name="gwt-compile" description="Compile to JavaScript">
+		<java classname="com.google.gwt.dev.Compiler" fork="yes" failonerror="true" maxmemory="256m">
+			<classpath>
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/conf" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/controllers" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/domain" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/services" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/taglib" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/grails-app/utils" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/groovy" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/java" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/main/resources" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/test/unit" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/test/integration" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/gwt" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/classes" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/target/test-classes" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-bootstrap/1.3.4/grails-bootstrap-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/codehaus/groovy/groovy-all/1.7.4/groovy-all-1.7.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.8/jcl-over-slf4j-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/slf4j/jul-to-slf4j/1.5.8/jul-to-slf4j-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-crud/1.3.4/grails-crud-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-core/3.0.3.RELEASE/spring-core-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-asm/3.0.3.RELEASE/spring-asm-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-context/3.0.3.RELEASE/spring-context-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-aop/3.0.3.RELEASE/spring-aop-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-beans/3.0.3.RELEASE/spring-beans-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-expression/3.0.3.RELEASE/spring-expression-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-core/1.3.4/grails-core-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-pool/commons-pool/1.5.3/commons-pool-1.5.3.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-io/commons-io/1.4/commons-io-1.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-aspects/3.0.3.RELEASE/spring-aspects-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-context-support/3.0.3.RELEASE/spring-context-support-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-instrument/3.0.3.RELEASE/spring-instrument-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-jdbc/3.0.3.RELEASE/spring-jdbc-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-tx/3.0.3.RELEASE/spring-tx-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-jms/3.0.3.RELEASE/spring-jms-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-orm/3.0.3.RELEASE/spring-orm-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-oxm/3.0.3.RELEASE/spring-oxm-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-web/3.0.3.RELEASE/spring-web-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-webmvc/3.0.3.RELEASE/spring-webmvc-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-spring/1.3.4/grails-spring-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-resources/1.3.4/grails-resources-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-web/1.3.4/grails-web-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/opensymphony/sitemesh/2.4/sitemesh-2.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/xpp3/xpp3_min/1.1.3.4.O/xpp3_min-1.1.3.4.O.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-gorm/1.3.4/grails-gorm-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/hibernate/hibernate-core/3.3.1.GA/hibernate-core-3.3.1.GA.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/hibernate/ejb3-persistence/1.0.2.GA/ejb3-persistence-1.0.2.GA.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/javassist/javassist/3.11.0.GA/javassist-3.11.0.GA.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/grails/grails-test/1.3.4/grails-test-1.3.4.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/springframework/spring-test/3.0.3.RELEASE/spring-test-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/taglibs/standard/1.1.2/standard-1.1.2.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/hibernate/hibernate-ehcache/3.3.1.GA/hibernate-ehcache-3.3.1.GA.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/net/sf/ehcache/ehcache-core/1.7.1/ehcache-core-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/slf4j/slf4j-log4j12/1.5.8/slf4j-log4j12-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/org/aspectj/aspectjrt/1.6.8/aspectjrt-1.6.8.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/com/google/gwt/inject/gin/1.0/gin-1.0.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/com/google/inject/guice/2.0/guice-2.0.jar" />
+				<pathelement location="/home/dsemenov/.m2/repository/com/extjs/gxt/2.2.0/gxt-2.2.0.jar" />
+				<pathelement location="/home/dsemenov/java/jdk1.6.0_16/lib/tools.jar" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/main/webapp/WEB-INF/lib/gwt-servlet.jar" />
+				<pathelement location="/home/dsemenov/Projects/mcellDev/mcell_3_9/mcellgui/src/main/webapp/WEB-INF/classes" />
+				<pathelement location="/home/dsemenov/java/gwt-2.1.0/gwt-user.jar" />
+				<pathelement location="/home/dsemenov/java/gwt-2.1.0/gwt-dev.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.codehaus.gpars/gpars/jars/gpars-0.9.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.tmatesoft.svnkit/svnkit/jars/svnkit-1.3.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.apache.ant/ant/jars/ant-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-launcher/jars/ant-launcher-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-junit/jars/ant-junit-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-nodeps/jars/ant-nodeps-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.apache.ant/ant-trax/jars/ant-trax-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/jline/jline/jars/jline-0.9.94.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.fusesource.jansi/jansi/jars/jansi-1.2.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/xalan/serializer/jars/serializer-2.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-docs/jars/grails-docs-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-bootstrap/jars/grails-bootstrap-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-scripts/jars/grails-scripts-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-core/jars/grails-core-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-resources/jars/grails-resources-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-web/jars/grails-web-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.slf4j/slf4j-log4j12/jars/slf4j-log4j12-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.test/jars/org.springframework.test-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.0_jdk5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.codehaus.groovy/groovy-all/jars/groovy-all-1.7.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-beanutils/commons-beanutils/jars/commons-beanutils-1.8.0.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-el/commons-el/jars/commons-el-1.0.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-validator/commons-validator/jars/commons-validator-1.3.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.3.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-io/commons-io/jars/commons-io-1.4.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-lang/commons-lang/jars/commons-lang-2.4.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.hibernate/ejb3-persistence/jars/ejb3-persistence-1.0.2.GA.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/opensymphony/sitemesh/jars/sitemesh-2.4.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-crud/jars/grails-crud-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-gorm/jars/grails-gorm-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-spring/jars/grails-spring-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.core/jars/org.springframework.core-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.aop/jars/org.springframework.aop-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.aspects/jars/org.springframework.aspects-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.asm/jars/org.springframework.asm-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.beans/jars/org.springframework.beans-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.context/jars/org.springframework.context-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.context.support/jars/org.springframework.context.support-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.expression/jars/org.springframework.expression-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.instrument/jars/org.springframework.instrument-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.jdbc/jars/org.springframework.jdbc-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.jms/jars/org.springframework.jms-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.orm/jars/org.springframework.orm-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.oxm/jars/org.springframework.oxm-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.transaction/jars/org.springframework.transaction-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.web/jars/org.springframework.web-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.springframework/org.springframework.web.servlet/jars/org.springframework.web.servlet-3.0.3.RELEASE.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.6.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.aspectj/aspectjrt/jars/aspectjrt-1.6.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/cglib/cglib-nodep/jars/cglib-nodep-2.1_3.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-fileupload/commons-fileupload/jars/commons-fileupload-1.2.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/oro/oro/jars/oro-2.0.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/javax.servlet/jstl/jars/jstl-1.1.2.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-dbcp/commons-dbcp/jars/commons-dbcp-1.2.2.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.5.3.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/hsqldb/hsqldb/jars/hsqldb-1.8.0.10.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/log4j/log4j/jars/log4j-1.2.16.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.5.8.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/apache-taglibs/standard/jars/standard-1.1.2.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.3.4.O.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/junit/junit/jars/junit-4.8.1.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/org.grails/grails-test/jars/grails-test-1.3.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/javax.servlet/servlet-api/jars/servlet-api-2.5.jar" />
+				<pathelement location="/home/dsemenov/.ivy2/cache/javax.servlet/jsp-api/jars/jsp-api-2.1.jar" />
+				<pathelement location="/home/dsemenov/java/gwt-2.1.0/gwt-dev.jar" />
+			</classpath>
+			<arg value="-style"/>
+			<arg value="OBFUSCATED"/>
+			<arg value="${gwt.module.id}" />
+		</java>
+	</target>
+
+	<target name="war" depends="gwt-compile, jars">
+		<delete file="${war.name}" />
+		<jar destfile="${war.name}" basedir="war" duplicate="preserve" />
+	</target>
+	
+	<target name="deploy" depends="war">
+		<move file="${war.name}" todir="" />
+	</target>
+
+	<target name="all" depends="deploy" />
+
+</project>

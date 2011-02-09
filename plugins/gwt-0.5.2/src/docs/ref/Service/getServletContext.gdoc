@@ -1,0 +1,20 @@
+
+h1. getServletContext
+
+h2. Purpose
+
+
+
+h2. Examples
+
+{code:java}
+foo.getServletContext()
+{code}
+
+h2. Description
+
+
+
+Arguments:
+
+[]

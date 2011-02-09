@@ -1,0 +1,5 @@
+#Fri Feb 04 01:29:47 EET 2011
+war.name=Orders.war
+compiler.style=OBFUSCATED
+server.path=
+compiler.memory.max=256m

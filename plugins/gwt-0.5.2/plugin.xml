@@ -1,0 +1,85 @@
+<plugin name='gwt' version='0.5.2' grailsVersion='1.1 &gt; *'>
+  <author>Peter Ledbrook</author>
+  <authorEmail>peter@cacoethes.co.uk</authorEmail>
+  <title>The Google Web Toolkit for Grails.</title>
+  <description>Incorporates GWT into Grails. In particular, GWT host pages can be
+GSPs and standard Grails services can be used to handle client RPC
+requests.
+</description>
+  <documentation>http://www.grails.org/plugin/gwt</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>org.codehaus.groovy.grails.plugins.gwt.GwtUrlMappings</resource>
+    <resource>org.codehaus.groovy.grails.plugins.gwt.GwtController</resource>
+    <resource>org.codehaus.groovy.grails.plugins.gwt.GwtActionService</resource>
+  </resources>
+  <dependencies />
+  <behavior>
+    <method name='getParams' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getFlash' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getSession' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getRequest' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getServletContext' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getResponse' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getGrailsAttributes' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getGrailsApplication' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getActionName' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getControllerName' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <method name='getWebRequest' artefact='Service' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService'>
+      <description />
+    </method>
+    <property name='params' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='flash' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='session' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='request' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='servletContext' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='response' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='grailsAttributes' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='grailsApplication' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='actionName' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='controllerName' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+    <property name='webRequest' type='org.codehaus.groovy.grails.plugins.gwt.GwtActionService' artefact='Service'>
+      <description />
+    </property>
+  </behavior>
+</plugin>
