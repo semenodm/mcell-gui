@@ -3,7 +3,7 @@ grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 grails.project.dependency.resolution = {
-	pom true
+	//pom true
 	//inherit Grails' default dependencies
 	inherits("global") {
 		// uncomment to disable ehcache
@@ -28,5 +28,17 @@ grails.project.dependency.resolution = {
 		// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
 		// runtime 'mysql:mysql-connector-java:5.1.13'
+		compile 'com.extjs.gxt.ui:expander:1.0.1-SNAPSHOT'
+
+		runtime 'net.sourceforge.jtds:jtds:1.2.4'
+
+		test 'org.seleniumhq.selenium:selenium-firefox-driver:latest.release'
+		test 'org.seleniumhq.selenium:selenium-chrome-driver:latest.release'
+		test 'org.seleniumhq.selenium:selenium-ie-driver:latest.release'
+		test('org.seleniumhq.selenium:selenium-htmlunit-driver:latest.release') { exclude 'xml-apis' }
+
+		test 'org.codehaus.geb:geb-spock:0.6.0'
+		//test 'org.codehaus.geb:geb-junit3:latest.release'
+		//test 'org.seleniumhq.webdriver:webdriver-chrome:latest.release'
 	}
 }

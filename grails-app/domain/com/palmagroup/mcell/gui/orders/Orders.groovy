@@ -3,33 +3,28 @@ package com.palmagroup.mcell.gui.orders
 import java.util.Date
 
 class Orders {
-	Long id
-	byte orderType
+	int id
+	String orderType
 	String number
 	Date orderedDate
+	String seller
+	String customer
+	String customerAddres
 	Date shippedDate
-	float discount
-	float summ
-	float vaTax
-	float summPay
+	String payment
+	String price
+	Boolean stockBalPathed
+	Boolean creditApproved
+	double discount
+	double discountPercent
+	double summ
+	double vaTax
+	double summPay
 	byte status
 	short stage
 	boolean isSynchronized
 	boolean isReserved
 	boolean isNeedConfirm
-	//	private Member member = null;
-	//
-	//	private Visit visit = null;
-	//
-	//	private Payment payment = null;
-	//
-	//	private SaleOutlet saleOutlet = null;
-	//
-	//	private Price price = null;
-
-	//private Set ordersDetails = new HashSet();
-
-	//private Set appliedDiscounts = new HashSet();
 	String description
 	static constraints = {
 	}
