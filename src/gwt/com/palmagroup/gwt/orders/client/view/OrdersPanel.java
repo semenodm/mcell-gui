@@ -1,5 +1,9 @@
 package com.palmagroup.gwt.orders.client.view;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +14,13 @@ import com.extjs.gxt.ui.client.data.JsonLoadResultReader;
 import com.extjs.gxt.ui.client.data.ListLoadResult;
 import com.extjs.gxt.ui.client.data.ModelData;
 import com.extjs.gxt.ui.client.data.ModelType;
+import com.extjs.gxt.ui.client.event.BaseEvent;
+import com.extjs.gxt.ui.client.event.Events;
+import com.extjs.gxt.ui.client.event.Listener;
+import com.extjs.gxt.ui.client.mvc.Dispatcher;
 import com.extjs.gxt.ui.client.store.ListStore;
 import com.extjs.gxt.ui.client.widget.ContentPanel;
+import com.extjs.gxt.ui.client.widget.form.FormPanel;
 import com.extjs.gxt.ui.client.widget.grid.ColumnConfig;
 import com.extjs.gxt.ui.client.widget.grid.ColumnModel;
 import com.extjs.gxt.ui.client.widget.grid.Grid;
@@ -21,10 +30,17 @@ import com.extjs.gxt.ui.client.widget.layout.FillLayout;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.BindingAnnotation;
+import com.google.inject.Inject;
+import com.palmagroup.gwt.orders.client.root.OrdersInquiryEvents;
 
 public class OrdersPanel extends ContentPanel {
 
-	public OrdersPanel() {
+	private Dispatcher dispatcher;
+	private Grid<ModelData> grid;
+
+	@Inject
+	public OrdersPanel(final Dispatcher dispatcher, final @OrderEditPanel.Key FormPanel orderEditPanel) {
 		setHeading("Orders");
 		setTitleCollapse(true);
 		FillLayout fillLayout = new FillLayout(Orientation.HORIZONTAL);
@@ -35,13 +51,36 @@ public class OrdersPanel extends ContentPanel {
 		
 		final WidgetExpander<ModelData> expander = new WidgetExpander<ModelData>(new WidgetRowRenderer<ModelData>() {
 
-            public Widget render(final ModelData model, final int rowIdx) {
-                final OrderEditPanel retval = new OrderEditPanel(model);                
-
+			public Widget render(final ModelData model, final int rowIdx) {
+				final FormPanel retval = orderEditPanel;
                 return retval;
             }
         });
-        
+
+		expander.addListener(Events.BeforeExpand, new Listener<BaseEvent>() {
+
+			@Override
+			public void handleEvent(BaseEvent be) {
+				expander.collapseAllRows();
+
+			}
+		});
+
+		expander.addListener(Events.Expand, new Listener<BaseEvent>() {
+
+			@Override
+			public void handleEvent(BaseEvent be) {
+
+				OrdersInquiryEvents.ExpandRow event = new OrdersInquiryEvents.ExpandRow();
+				WidgetExpander<ModelData> expander = (WidgetExpander<ModelData>) be.getSource();
+				event.setData(grid.getSelectionModel().getSelectedItem());
+				dispatcher.dispatch(event);
+				GWT.log(event.getType() + " Has been dispatched");
+			}
+		});
+		
+
+		
 		configs.add(expander);
 
 		ColumnConfig columnConfig = new ColumnConfig("orderNum", "Order Number", 150);
@@ -117,13 +156,20 @@ public class OrdersPanel extends ContentPanel {
 	  
 	    ListStore<ModelData> store = new ListStore<ModelData>(loader);  
 
-		final Grid<ModelData> grid = new Grid<ModelData>(store, cm);
+		grid = new Grid<ModelData>(store, cm);
 		grid.setColumnLines(true);
 		grid.addPlugin(expander);
 		add(grid);
 		grid.setBorders(true);
 		grid.ensureDebugId("ORDERS_GRID");
 		loader.load();
+	}
+
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target({ ElementType.FIELD, ElementType.PARAMETER })
+	@BindingAnnotation
+	public @interface Key {
+
 	}
 
 }
