@@ -31,7 +31,7 @@ public class OrderInfoController extends Controller {
 	@Override
 	public void handleEvent(AppEvent event) {
 		GWT.log(event + " has been handled by: " + this);
-		GWT.log("Displaying data " + event.getData());
+		// GWT.log("Displaying data " + event.getData());
 		orderInfoView.displayData((ModelData) event.getData());
 	}
 

@@ -16,7 +16,31 @@ public class OrdersInquiryEvents {
 
 		public ExpandRow() {
 			super(ORDER_ROW_EXPANDED);
-			// TODO Auto-generated constructor stub
+		}
+
+	}
+
+	public static class ClickOrderEditorTab extends AppEvent {
+		private String tabId;
+
+		@Override
+		public String toString() {
+			return "ORDEREDIT_PANEL_TAB_CLICKED";
+		}
+
+		public static final EventType ORDER_EDIT_PANEL_TAB_CLICKED = new EventType();
+
+		public ClickOrderEditorTab(String tabId) {
+			super(ORDER_EDIT_PANEL_TAB_CLICKED);
+			this.setTabId(tabId);
+		}
+
+		public void setTabId(String tabId) {
+			this.tabId = tabId;
+		}
+
+		public String getTabId() {
+			return tabId;
 		}
 
 	}

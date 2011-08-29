@@ -26,11 +26,19 @@ class Orders {
 	boolean isReserved
 	boolean isNeedConfirm
 	String description
+	Integer customerRef
 	static constraints = {
+		customer(nullable:true)
+		payment(nullable:true)
+		price(nullable:true)
+		customerAddres(nullable:true)
+		shippedDate(nullable:true)
+		customerRef(nullable:true)
 	}
 	static mapping = {
 		table 'v_gui_orders'
 		version false
 		id generator : 'identity'
+		id column:'id_order'
 	}
 }

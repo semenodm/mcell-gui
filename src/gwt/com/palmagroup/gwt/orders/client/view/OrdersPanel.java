@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.extjs.gxt.ui.client.Style.Orientation;
 import com.extjs.gxt.ui.client.data.BaseListLoader;
+import com.extjs.gxt.ui.client.data.DataField;
 import com.extjs.gxt.ui.client.data.HttpProxy;
 import com.extjs.gxt.ui.client.data.JsonLoadResultReader;
 import com.extjs.gxt.ui.client.data.ListLoadResult;
@@ -17,6 +18,8 @@ import com.extjs.gxt.ui.client.data.ModelType;
 import com.extjs.gxt.ui.client.event.BaseEvent;
 import com.extjs.gxt.ui.client.event.Events;
 import com.extjs.gxt.ui.client.event.Listener;
+import com.extjs.gxt.ui.client.event.SelectionChangedEvent;
+import com.extjs.gxt.ui.client.event.SelectionChangedListener;
 import com.extjs.gxt.ui.client.mvc.Dispatcher;
 import com.extjs.gxt.ui.client.store.ListStore;
 import com.extjs.gxt.ui.client.widget.ContentPanel;
@@ -33,6 +36,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.BindingAnnotation;
 import com.google.inject.Inject;
 import com.palmagroup.gwt.orders.client.root.OrdersInquiryEvents;
+
 
 public class OrdersPanel extends ContentPanel {
 
@@ -58,11 +62,9 @@ public class OrdersPanel extends ContentPanel {
         });
 
 		expander.addListener(Events.BeforeExpand, new Listener<BaseEvent>() {
-
 			@Override
 			public void handleEvent(BaseEvent be) {
 				expander.collapseAllRows();
-
 			}
 		});
 
@@ -70,9 +72,7 @@ public class OrdersPanel extends ContentPanel {
 
 			@Override
 			public void handleEvent(BaseEvent be) {
-
 				OrdersInquiryEvents.ExpandRow event = new OrdersInquiryEvents.ExpandRow();
-				WidgetExpander<ModelData> expander = (WidgetExpander<ModelData>) be.getSource();
 				event.setData(grid.getSelectionModel().getSelectedItem());
 				dispatcher.dispatch(event);
 				GWT.log(event.getType() + " Has been dispatched");
@@ -134,7 +134,7 @@ public class OrdersPanel extends ContentPanel {
 		ColumnModel cm = new ColumnModel(configs);
 
 		String path = GWT.getHostPageBaseURL() + "../" + "orders/index";
-		GWT.log(path);
+
 	    RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, path);  
 	    HttpProxy<String> proxy = new HttpProxy<String>(builder);  
 
@@ -148,6 +148,12 @@ public class OrdersPanel extends ContentPanel {
 		type.addField("type", "orderType");
 		type.addField("sum", "summPay");
 		type.addField("seller", "seller");
+		DataField dataField = new DataField("customerRef", "customerRef");
+		dataField.setType(Integer.class);
+		type.addField(dataField);
+		dataField = new DataField("id", "id");
+		dataField.setType(Integer.class);
+		type.addField(dataField);
 
 	    JsonLoadResultReader<ListLoadResult<ModelData>> reader = new JsonLoadResultReader<ListLoadResult<ModelData>>(type);  
 	  
@@ -162,6 +168,15 @@ public class OrdersPanel extends ContentPanel {
 		add(grid);
 		grid.setBorders(true);
 		grid.ensureDebugId("ORDERS_GRID");
+		grid.getSelectionModel().addSelectionChangedListener(new SelectionChangedListener<ModelData>() {
+			
+			@Override
+			public void selectionChanged(SelectionChangedEvent<ModelData> se) {
+				orderEditPanel.setData("customerRef", se.getSelectedItem().get("customerRef"));
+				orderEditPanel.setData("orderRef", se.getSelectedItem().get("id"));
+				
+			}
+		});
 		loader.load();
 	}
 

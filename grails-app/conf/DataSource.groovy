@@ -11,6 +11,27 @@ hibernate {
 }
 mcellFunctionalDatasource{
 	driverClassName = "net.sourceforge.jtds.jdbc.Driver"
+	url = "jdbc:jtds:sqlserver://192.168.231.31/mcell3_8"
+	//dbCreate = "validate"
+	username = "sap"
+	password = "sap"
+
+	autocommit = false
+	dialect=org.hibernate.dialect.SQLServerDialect
+}
+
+mcellRemoteFunctionalDatasource{
+	driverClassName = "net.sourceforge.jtds.jdbc.Driver"
+	url = "jdbc:jtds:sqlserver://omt.mpc-ua.com:39505/mcell3_8"
+	//dbCreate = "validate"
+	username = "sap"
+	password = "sap"
+
+	autocommit = false
+	dialect=org.hibernate.dialect.SQLServerDialect
+}
+mcellProductionDatasource{
+	driverClassName = "net.sourceforge.jtds.jdbc.Driver"
 	url = "jdbc:jtds:sqlserver://omt.mpc-ua.com:39505/mcell3_9_sdo"
 	//dbCreate = "validate"
 	username = "sap"
@@ -22,6 +43,7 @@ mcellFunctionalDatasource{
 // environment specific settings
 environments {
 	functional{ dataSource = mcellFunctionalDatasource }
+	remoteFunctional{ dataSource = mcellRemoteFunctionalDatasource }
 	development {
 		dataSource {
 			dbCreate = "create-drop" // one of 'create', 'create-drop','update'

@@ -55,11 +55,11 @@ class OrdersPageSpec extends GebReportingSpec {
 		and:
 		ordersGrid.expandedForm.customerInfoTab.tabName.click()
 		then:
-		ordersGrid.expandedForm.customerInfoTab.customer.value() == 'Customer 1'
-		ordersGrid.expandedForm.customerInfoTab.salesOutlet.value() == 'Customers 1 SalesOutlet'
-		ordersGrid.expandedForm.customerInfoTab.dept.value() == '100.0'
-		ordersGrid.expandedForm.customerInfoTab.depOverdue.value() == '0.0'
-		ordersGrid.expandedForm.customerInfoTab.creditLimit.value() == '1000.0'
+		ordersGrid.expandedForm.customerInfoTab.customer.value() == 'customer_1'
+		//ordersGrid.expandedForm.customerInfoTab.salesOutlet.value() == 'Customers 1 SalesOutlet'
+		ordersGrid.expandedForm.customerInfoTab.dept.value() == '100.1'
+		ordersGrid.expandedForm.customerInfoTab.deptOverdue.value() == '0'
+		ordersGrid.expandedForm.customerInfoTab.creditLimit.value() == '1000.1'
 	}
 
 	def "i would like to expand rows to see order rows"(){
@@ -71,7 +71,9 @@ class OrdersPageSpec extends GebReportingSpec {
 		to OrdersPage
 		and:
 		ordersGrid.expandRow(0).click()
+		and:
+		ordersGrid.expandedForm.orderDetailsTab.tabName.click()
 		then:
-		ordersGrid.expandedForm.orderDetailsTab.details.size() == '3'
+		ordersGrid.expandedForm.orderDetailsTab.details.size() == 3
 	}
 }

@@ -6,5 +6,6 @@ class OrderForm extends Module {
 	static content = {
 		orderInfoTab{ module OrderInfoTabPageObject }
 		customerInfoTab{ module CustomerInfoTabPageObject }
+		orderDetailsTab{module OrderDetailsPageObject}
 	}
 }
