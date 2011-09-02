@@ -8,47 +8,40 @@ import java.util.Map;
 
 import com.extjs.gxt.ui.client.data.BaseModelData;
 import com.extjs.gxt.ui.client.data.ModelData;
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.http.client.Request;
-import com.google.gwt.http.client.RequestBuilder;
-import com.google.gwt.http.client.RequestCallback;
-import com.google.gwt.http.client.RequestException;
-import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.BindingAnnotation;
+import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class DefaultHttpCustomerService implements HttpCustomerService {
+public class DefaultHttpCustomerService implements HttpCustomerService<ModelData> {
+
+
+	private HttpService httpService;
+
+	@Inject
+	public DefaultHttpCustomerService(@DefaultHttpService.Key HttpService httpService) {
+		super();
+		this.httpService = httpService;
+	}
 
 	@Override
 	public void retrieveCustomerInfo(String customerId, final AsyncCallback<ModelData> callback) {
-		String baseUrl = GWT.getHostPageBaseURL().replace("ordersControl", "customer");
-		String URL = baseUrl + "retrieveCustomer";
-		GWT.log("URL = " + URL);
-		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, URL);
-		requestBuilder.setHeader("Content-type", "application/x-www-form-urlencoded");
-		try {
-			requestBuilder.sendRequest("customerId=" + customerId, new RequestCallback() {
+		RequestParametersHolder paramsHolder = new RequestParametersHolder();
+		paramsHolder.addGWTModuleName("ordersControl");
+		paramsHolder.addGrailsControllerName("customer");
+		paramsHolder.addGrailsControllerClosure("retrieveCustomer");
+		paramsHolder.addHttpParam("customerId", customerId);
 
-				@Override
-				public void onResponseReceived(Request request, Response response) {
+		JsonParser<ModelData> parser = new JsonParser<ModelData>() {
 
-					Map<String, Object> decode = JsonConverter.decode(response.getText());
-					
-					callback.onSuccess(new BaseModelData(decode));
-					// GWT.log("Data retrieved" + response.getText());
-				}
-				
-				@Override
-				public void onError(Request arg0, Throwable e) {
-					GWT.log("Error retrieving JSON data", e);
-
-				}
-			});
-		} catch (RequestException e) {
-			GWT.log("Error retrieving JSON data", e);
-		}
+			@Override
+			public ModelData parse(String response) {
+				Map<String, Object> decode = JsonConverter.decode(response);
+				return new BaseModelData(decode);
+			}
+		};
+		httpService.processRequest(paramsHolder, parser, callback);
 	}
 
 	@Retention(RetentionPolicy.RUNTIME)

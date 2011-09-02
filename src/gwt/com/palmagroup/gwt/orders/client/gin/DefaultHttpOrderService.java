@@ -10,55 +10,49 @@ import java.util.Map;
 
 import com.extjs.gxt.ui.client.data.BaseModelData;
 import com.extjs.gxt.ui.client.data.ModelData;
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.http.client.Request;
-import com.google.gwt.http.client.RequestBuilder;
-import com.google.gwt.http.client.RequestCallback;
-import com.google.gwt.http.client.RequestException;
-import com.google.gwt.http.client.Response;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.BindingAnnotation;
+import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.palmagroup.gwt.orders.client.controller.OrderDetailsController;
 
 @Singleton
-public class DefaultHttpOrderService implements HttpOrderService {
+public class DefaultHttpOrderService implements HttpOrderService<List<ModelData>> {
+
+	private HttpService httpService;
+
+	@Inject
+	public DefaultHttpOrderService(@DefaultHttpService.Key HttpService httpService) {
+		super();
+		this.httpService = httpService;
+	}
 
 	@Override
-	public void retrieveOrderDetails(String orderRef, final OrderDetailsController orderDetailsController) {
-		String baseUrl = GWT.getHostPageBaseURL().replace("ordersControl", "orders");
-		GWT.log("URL = " + baseUrl);
-		String URL = baseUrl + "retrieveOrderDetails";
-		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, URL);
-		requestBuilder.setHeader("Content-type", "application/x-www-form-urlencoded");
-		GWT.log("orderRef=" + orderRef);
-		try {
-			requestBuilder.sendRequest("orderRef=" + orderRef, new RequestCallback() {
+	public void retrieveOrderDetails(String orderRef, final AsyncCallback<List<ModelData>> modelController) {
 
-				@Override
-				public void onResponseReceived(Request request, Response response) {
+		RequestParametersHolder paramsHolder = new RequestParametersHolder();
+		paramsHolder.addGWTModuleName("ordersControl");
+		paramsHolder.addGrailsControllerName("orders");
+		paramsHolder.addGrailsControllerClosure("retrieveOrderDetails");
+		paramsHolder.addHttpParam("orderRef", orderRef);
 
-					Map<String, Object> decode = JsonConverter.decode(response.getText());
+		JsonParser<List<ModelData>> parser = new JsonParser<List<ModelData>>() {
 
-					List<ModelData> orderDetails = new ArrayList<ModelData>();
-					for (Map model : (List<Map>)decode.get("orderDetails")) {
-						orderDetails.add(new BaseModelData(model));
-					} 
+			@Override
+			public List<ModelData> parse(String response) {
+				Map<String, Object> decode = JsonConverter.decode(response);
 
-					orderDetailsController.onSuccess(orderDetails);
-					// GWT.log("Data retrieved" + decode);
+				List<ModelData> orderDetails = new ArrayList<ModelData>();
+				for (Map<String, Object> model : (List<Map<String, Object>>) decode.get("orderDetails")) {
+					orderDetails.add(new BaseModelData(model));
 				}
 
-				@Override
-				public void onError(Request arg0, Throwable e) {
-					GWT.log("Error retrieving JSON data", e);
-
-				}
-			});
-		} catch (RequestException e) {
-			GWT.log("Error retrieving JSON data", e);
-		}
+				return orderDetails;
+			}
+		};
+		httpService.processRequest(paramsHolder, parser, modelController);
 
 	}
+
 	@Retention(RetentionPolicy.RUNTIME)
 	@Target({ ElementType.FIELD, ElementType.PARAMETER })
 	@BindingAnnotation

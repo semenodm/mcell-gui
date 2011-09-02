@@ -33,6 +33,7 @@ public class OrdersModule extends AbstractGinModule {
 				DefaultHttpCustomerService.class);
 		bind(HttpOrderService.class).annotatedWith(DefaultHttpOrderService.Key.class).to(
 				DefaultHttpOrderService.class);
+		bind(HttpService.class).annotatedWith(DefaultHttpService.Key.class).to(DefaultHttpService.class);
 	}
 
 	private void setupControllers() {
