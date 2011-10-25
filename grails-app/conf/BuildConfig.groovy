@@ -11,9 +11,9 @@ grails.project.dependency.resolution = {
 	}
 	log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 	repositories {
-		//		grailsPlugins()
-		//		grailsHome()
-		//		grailsCentral()
+		grailsPlugins()
+		grailsHome()
+		grailsCentral()
 
 		// uncomment the below to enable remote dependency resolution
 		// from public Maven repositories
@@ -38,6 +38,7 @@ grails.project.dependency.resolution = {
 		test('org.seleniumhq.selenium:selenium-htmlunit-driver:latest.release') { exclude 'xml-apis' }
 
 		test 'org.codehaus.geb:geb-spock:0.6.0'
+		test('org.codehaus.groovy.modules.http-builder:http-builder:0.5.0') { excludes "commons-logging", "xml-apis", "groovy" }
 		//test 'org.codehaus.geb:geb-junit3:latest.release'
 		//test 'org.seleniumhq.webdriver:webdriver-chrome:latest.release'
 	}

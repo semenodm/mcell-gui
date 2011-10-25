@@ -71,7 +71,7 @@ log4j = {
 	//
 	appenders {
 		console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-		file name:'file', file:"C:/logs/macel-gui.log"
+		//file name:'file', file:"C:/logs/macel-gui.log"
 	}
 
 	root{ info 'stdout', 'file' }
@@ -85,9 +85,9 @@ log4j = {
 			'org.codehaus.groovy.grails.plugins', // plugins
 			'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
 			'org.springframework',
-
+			'org.hibernate',
 			'net.sf.ehcache.hibernate'
 
 	warn   'org.mortbay.log'
-	debug  'org.hibernate','com.palmagroup'
+	debug  'com.palmagroup'
 }
