@@ -28,8 +28,9 @@ grails.project.dependency.resolution = {
 		// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
 		// runtime 'mysql:mysql-connector-java:5.1.13'
-		compile 'com.extjs.gxt.ui:expander:1.0.1-SNAPSHOT'
-
+		//compile 'com.extjs.gxt.ui:expander:1.0.1-SNAPSHOT'
+		//compile 'com.google.gwt.inject:gin:1.5.0'
+		//compile 'com.extjs:gxt:2.2.0'
 		runtime 'net.sourceforge.jtds:jtds:1.2.4'
 
 		//test 'org.seleniumhq.selenium:selenium-firefox-driver:latest.release'
