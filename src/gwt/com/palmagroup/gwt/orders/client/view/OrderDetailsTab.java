@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.extjs.gxt.ui.client.Style.Orientation;
+import com.extjs.gxt.ui.client.Style.Scroll;
 import com.extjs.gxt.ui.client.data.ModelData;
 import com.extjs.gxt.ui.client.mvc.Dispatcher;
 import com.extjs.gxt.ui.client.store.ListStore;
@@ -28,21 +29,16 @@ public class OrderDetailsTab extends TabItem implements MultiEntityView {
 	@Inject
 	public OrderDetailsTab(final Dispatcher dispatcher) {
 		super("Order Details");
-		// ContentPanel cp = new ContentPanel();
-		setStyleAttribute("padding", "10px");
-		// setBodyBorder(true);
-		// setHeading("Orders");
-		// setButtonAlign(HorizontalAlignment.CENTER);
-		setLayout(new FillLayout(Orientation.HORIZONTAL));
-		// getHeader().setIconAltText("Grid Icon");
-		setSize(600, 300);
 
-		// setTitleCollapse(true);
-		// add(cp);
-		// FillLayout fillLayout = new FillLayout(Orientation.HORIZONTAL);
-		// fillLayout.setAdjustForScroll(true);
-		// setLayout(fillLayout);
-		// setLayout(new FlowLayout(10));
+
+		setStyleAttribute("padding", "10px");
+
+		setLayout(new FillLayout(Orientation.HORIZONTAL));
+		setScrollMode(Scroll.AUTO);
+		// setAutoHeight(true);
+
+
+
 		List<ColumnConfig> configs = new ArrayList<ColumnConfig>();
 		
 
@@ -79,15 +75,17 @@ public class OrderDetailsTab extends TabItem implements MultiEntityView {
 		listStore = new ListStore<ModelData>();
 		grid = new Grid<ModelData>(listStore, new ColumnModel(configs));
 		grid.setColumnLines(true);
-
+		grid.setSize(600, 300);
 		add(grid);
 		grid.setBorders(true);
 		grid.ensureDebugId("ORDER_DETAILS_GRID");
-		ensureDebugId("ORDER_DETAILS_TAB"); // setTopComponent(grid);
+		ensureDebugId("ORDER_DETAILS_TAB");
+
 	}
 
 	@Override
 	public void displayData(List<ModelData> data) {
+		// GWT.log("display details" + data);
 		listStore.removeAll();
 		listStore.add(data);
 	}

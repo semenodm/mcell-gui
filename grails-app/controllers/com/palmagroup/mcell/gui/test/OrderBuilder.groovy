@@ -20,6 +20,7 @@ class OrderBuilder {
 
 	def hasSumm(double summ){
 		order.summPay = summ
+		order.summ = summ
 		this
 	}
 	def hasSeller(String seller){

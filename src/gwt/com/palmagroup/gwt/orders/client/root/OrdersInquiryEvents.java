@@ -1,9 +1,32 @@
 package com.palmagroup.gwt.orders.client.root;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.extjs.gxt.ui.client.event.EventType;
 import com.extjs.gxt.ui.client.mvc.AppEvent;
 
 public class OrdersInquiryEvents {
+
+	public static class ApplyFilterEvent extends AppEvent {
+
+		public static final EventType APPLY_ENQUERY_FILTER = new EventType();
+
+		Map<String, String> params = new HashMap<String, String>();
+		
+		public ApplyFilterEvent(Map<String, String> params) {
+			super(APPLY_ENQUERY_FILTER);
+			this.params = params;
+		}
+
+		public Map<String, String> getParams() {
+			return params;
+		}
+
+		public void setParams(Map<String, String> params) {
+			this.params = params;
+		}
+	}
 
 	public static class ExpandRow extends AppEvent {
 		@Override

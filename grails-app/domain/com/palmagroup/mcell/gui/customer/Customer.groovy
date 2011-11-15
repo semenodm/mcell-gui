@@ -50,4 +50,14 @@ class Customer {
 		version false
 		id generator : 'identity'
 	}
+	static expose = 'customers'
+	static api = [
+		excludedFields: [],
+		list : { params ->
+			Customer.enquire(params)
+		},
+		count : { params ->
+			Customer.enquireCount(params)
+		}
+	]
 }

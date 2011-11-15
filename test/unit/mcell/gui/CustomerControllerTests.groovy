@@ -2,7 +2,7 @@ package mcell.gui
 
 import grails.test.*
 
-class MainControllerTests extends ControllerUnitTestCase {
+class CustomerControllerTests extends ControllerUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

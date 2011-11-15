@@ -22,11 +22,11 @@ public class DefaultHttpService implements HttpService {
 
 		String baseUrl = GWT.getHostPageBaseURL().replace(paramsHolder.getGWTModuleName(),
 				paramsHolder.getGrailsControllerName());
-		String URL = baseUrl + paramsHolder.getGrailsControllerClosure();
-		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, URL);
+		String URL = baseUrl + paramsHolder.getGrailsControllerClosure()+"?"+paramsHolder.getHttpParams();
+		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.GET, URL);
 		requestBuilder.setHeader("Content-type", "application/x-www-form-urlencoded");
 		try {
-			requestBuilder.sendRequest(paramsHolder.getHttpParams(), new RequestCallback() {
+			requestBuilder.sendRequest(null, new RequestCallback() {
 
 				@Override
 				public void onResponseReceived(Request request, Response response) {

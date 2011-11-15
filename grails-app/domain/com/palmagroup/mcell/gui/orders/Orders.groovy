@@ -1,6 +1,5 @@
 package com.palmagroup.mcell.gui.orders
 
-import java.util.Date
 
 class Orders {
 	int id
@@ -41,4 +40,15 @@ class Orders {
 		id generator : 'identity'
 		id column:'id_order'
 	}
+
+	static expose = 'orders'
+	static api = [
+		excludedFields: [],
+		list : { params ->
+			Orders.enquire(params)
+		},
+		count : { params ->
+			Orders.enquireCount(params)
+		}
+	]
 }

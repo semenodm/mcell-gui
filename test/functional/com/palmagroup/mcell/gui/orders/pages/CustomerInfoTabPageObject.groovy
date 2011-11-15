@@ -4,8 +4,8 @@ import geb.Module
 
 class CustomerInfoTabPageObject extends Module {
 	static content = {
-		tabName{ $('li[id$=CUSTOMER_INFO_TAB]') }
-		tab{ $('div[id$=CUSTOMER_INFO_TAB]') }
+		tabName{ $('li', id:contains(~/.*CUSTOMER_INFO_TAB/)) }
+		tab{ $('div',id:contains(~/.*CUSTOMER_INFO_TAB/)) }
 		customer{
 			tab.find("label", text:"Customer:").next().find("input")
 		}

@@ -7,10 +7,15 @@ class Grid extends Module{
 
 	static content = {
 		grid {
-			$('div', id: "gwt-debug-${debugId}").find('.x-grid3-body')
+			$('div', id: "gwt-debug-${debugId}")//.find('.x-grid3-body')
 		}
-		rows{ grid.find('table[class*=row-table]') }
-		size{ rows.size() }
-		row{row-> rows[row] }
+		rows(wait: [20, 1]){grid.find('div', class:'x-grid3-row')}
+	}
+
+	def row(def rowNum){
+		rows[row]
+	}
+	def size(){
+		rows.size()
 	}
 }

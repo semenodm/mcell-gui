@@ -8,5 +8,5 @@
 	<inherits name="com.extjs.gxt.ui.WidgetExpander" />
 	<inherits name="com.google.gwt.i18n.I18N"/>
 	<inherits name="com.google.gwt.user.Debug"/>
-<set-property name="user.agent" value="ie6,ie8,gecko,gecko1_8,safari"/>
+<!-- <set-property name="user.agent" value="ie6,ie8,gecko,gecko1_8,safari"/> -->
 </module>

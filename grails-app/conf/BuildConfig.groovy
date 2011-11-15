@@ -32,10 +32,11 @@ grails.project.dependency.resolution = {
 
 		runtime 'net.sourceforge.jtds:jtds:1.2.4'
 
-		test 'org.seleniumhq.selenium:selenium-firefox-driver:latest.release'
-		test 'org.seleniumhq.selenium:selenium-chrome-driver:latest.release'
-		test 'org.seleniumhq.selenium:selenium-ie-driver:latest.release'
-		test('org.seleniumhq.selenium:selenium-htmlunit-driver:latest.release') { exclude 'xml-apis' }
+		//test 'org.seleniumhq.selenium:selenium-firefox-driver:latest.release'
+		//test 'org.seleniumhq.selenium:selenium-chrome-driver:latest.release'
+		//test 'org.seleniumhq.selenium:selenium-ie-driver:latest.release'
+		test 'org.apache.ivy:ivy:latest.release'
+		//test('org.seleniumhq.selenium:selenium-htmlunit-driver:latest.release') { exclude 'xml-apis' }
 
 		test 'org.codehaus.geb:geb-spock:0.6.0'
 		test('org.codehaus.groovy.modules.http-builder:http-builder:0.5.0') { excludes "commons-logging", "xml-apis", "groovy" }

@@ -17,6 +17,7 @@ import com.extjs.gxt.ui.client.widget.layout.ColumnData;
 import com.extjs.gxt.ui.client.widget.layout.ColumnLayout;
 import com.extjs.gxt.ui.client.widget.layout.FormData;
 import com.extjs.gxt.ui.client.widget.layout.FormLayout;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.inject.BindingAnnotation;
 import com.google.inject.Singleton;
@@ -94,12 +95,12 @@ public class OrderInfoTab extends TabItem implements SingleEntityView {
 
 	@Override
 	public void displayData(ModelData model) {
-		// GWT.log("Displaying data " + model);
+		GWT.log("Displaying data " + model);
 		txtfldDescription.setValue((String) model.get("description"));
 		txtfldSeller.setValue((String) model.get("seller"));
-		txtfldOrderedNumber.setValue((String) model.get("orderNum"));
-		nmbrfldOrderSumm.setValue((Double) model.get("sum"));
-		dtfldOrderedDate.setValue(dateFormat.parse((String) model.get("orderDate")));
+		txtfldOrderedNumber.setValue((String) model.get("number"));
+		nmbrfldOrderSumm.setValue((Double) model.get("summ"));
+		dtfldOrderedDate.setValue(dateFormat.parse((String) model.get("orderedDate")));
 
 		Object shippedDate = model.get("shippedDate");
 		if (shippedDate != null) {

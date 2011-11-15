@@ -5,7 +5,7 @@ import geb.Module
 class OrderForm extends Module {
 	static content = {
 		orderInfoTab{ module OrderInfoTabPageObject }
-		customerInfoTab{ module CustomerInfoTabPageObject }
-		orderDetailsTab{module OrderDetailsPageObject}
+		customerInfoTab(required: false){ module CustomerInfoTabPageObject }
+		orderDetailsTab(required: false){module OrderDetailsPageObject}
 	}
 }

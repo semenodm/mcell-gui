@@ -4,7 +4,9 @@ import geb.Module
 
 class OrderInfoTabPageObject extends Module {
 	static content = {
-		tab{ $('div[id$=ORDER_INFO_TAB]') }
+		tab{
+			$('div',id:contains(~/.*ORDER_INFO_TAB/))
+		}
 		nomNumber{
 			tab.find("label", text:"Order Number:").next().find("input")
 		}

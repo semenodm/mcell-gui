@@ -10,7 +10,7 @@ import com.google.inject.Inject;
 public class OrdersHomePage extends Viewport {
 
 	@Inject
-	public OrdersHomePage(@OrdersPanel.Key ContentPanel ordersPanel) {
+	public OrdersHomePage(@OrdersEnqueryPanel.Key ContentPanel ordersPanel) {
 		setBorders(true);
 		setLayout(new BorderLayout());
 

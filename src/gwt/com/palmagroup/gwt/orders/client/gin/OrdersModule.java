@@ -8,13 +8,15 @@ import com.google.gwt.inject.client.AbstractGinModule;
 import com.palmagroup.gwt.orders.client.controller.CustomerInfoController;
 import com.palmagroup.gwt.orders.client.controller.OrderDetailsController;
 import com.palmagroup.gwt.orders.client.controller.OrderInfoController;
+import com.palmagroup.gwt.orders.client.controller.OrdersEnqueryController;
 import com.palmagroup.gwt.orders.client.root.DispatcherProvider;
 import com.palmagroup.gwt.orders.client.view.CustomerInfoTab;
 import com.palmagroup.gwt.orders.client.view.MultiEntityView;
 import com.palmagroup.gwt.orders.client.view.OrderDetailsTab;
 import com.palmagroup.gwt.orders.client.view.OrderEditPanel;
 import com.palmagroup.gwt.orders.client.view.OrderInfoTab;
-import com.palmagroup.gwt.orders.client.view.OrdersPanel;
+import com.palmagroup.gwt.orders.client.view.OrdersEnqueryPanel;
+import com.palmagroup.gwt.orders.client.view.OrdersListPanel;
 import com.palmagroup.gwt.orders.client.view.SingleEntityView;
 
 
@@ -33,6 +35,8 @@ public class OrdersModule extends AbstractGinModule {
 				DefaultHttpCustomerService.class);
 		bind(HttpOrderService.class).annotatedWith(DefaultHttpOrderService.Key.class).to(
 				DefaultHttpOrderService.class);
+		bind(HttpOrderEnqueryService.class).annotatedWith(DefaultHttpEnqueryService.Key.class).to(
+				DefaultHttpEnqueryService.class);
 		bind(HttpService.class).annotatedWith(DefaultHttpService.Key.class).to(DefaultHttpService.class);
 	}
 
@@ -40,10 +44,13 @@ public class OrdersModule extends AbstractGinModule {
 		bind(OrderInfoController.class).asEagerSingleton();
 		bind(CustomerInfoController.class).asEagerSingleton();
 		bind(OrderDetailsController.class).asEagerSingleton();
+		bind(OrdersEnqueryController.class).asEagerSingleton();
 	}
 
 	private void setupViews() {
-		bind(ContentPanel.class).annotatedWith(OrdersPanel.Key.class).to(OrdersPanel.class);
+		bind(ContentPanel.class).annotatedWith(OrdersEnqueryPanel.Key.class).to(OrdersEnqueryPanel.class);
+		bind(MultiEntityView.class).annotatedWith(OrdersListPanel.Key.class).to(OrdersListPanel.class);
+		bind(ContentPanel.class).annotatedWith(OrdersListPanel.Key.class).to(OrdersListPanel.class);
 		bind(FormPanel.class).annotatedWith(OrderEditPanel.Key.class).to(OrderEditPanel.class);
 		bind(SingleEntityView.class).annotatedWith(OrderInfoTab.Key.class).to(OrderInfoTab.class);
 		bind(TabItem.class).annotatedWith(OrderInfoTab.Key.class).to(OrderInfoTab.class);

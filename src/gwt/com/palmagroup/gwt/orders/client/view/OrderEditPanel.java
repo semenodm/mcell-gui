@@ -10,17 +10,18 @@ import com.extjs.gxt.ui.client.event.Events;
 import com.extjs.gxt.ui.client.event.Listener;
 import com.extjs.gxt.ui.client.event.TabPanelEvent;
 import com.extjs.gxt.ui.client.mvc.Dispatcher;
-import com.extjs.gxt.ui.client.store.ListStore;
 import com.extjs.gxt.ui.client.widget.TabItem;
 import com.extjs.gxt.ui.client.widget.TabPanel;
 import com.extjs.gxt.ui.client.widget.button.Button;
-import com.extjs.gxt.ui.client.widget.form.ComboBox;
 import com.extjs.gxt.ui.client.widget.form.FormPanel;
 import com.extjs.gxt.ui.client.widget.layout.FitLayout;
+import com.google.gwt.core.client.GWT;
 import com.google.inject.BindingAnnotation;
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import com.palmagroup.gwt.orders.client.root.OrdersInquiryEvents;
 
+@Singleton
 public class OrderEditPanel extends FormPanel {
 	private TabItem orderInfoTab;
 	private TabItem customerInfoTab;
@@ -45,26 +46,9 @@ public class OrderEditPanel extends FormPanel {
 		setSize(600, -1);
 		setLayout(new FitLayout());
 
-		ComboBox cmbxStock = new ComboBox();
-		cmbxStock.setStore(new ListStore());
-		// right.add(cmbxStock, new FormData("100%"));
-		cmbxStock.setFieldLabel("Stock");
-
-		ComboBox cmbxPrice = new ComboBox();
-		cmbxPrice.setStore(new ListStore());
-		// left.add(cmbxPrice, new FormData("100%"));
-		cmbxPrice.setFieldLabel("Price");
-
-		ComboBox cmbxPayment = new ComboBox();
-		cmbxPayment.setStore(new ListStore());
-		// left.add(cmbxPayment, new FormData("100%"));
-		cmbxPayment.setFieldLabel("Payment");
-
-
-
 		TabPanel tabPanel = new TabPanel();
-
-
+		tabPanel.setAutoHeight(true);
+		tabPanel.setAutoWidth(true);
 		tabPanel.add(orderInfoTab);
 		tabPanel.add(customerInfoTab);
 		customerInfoTab.addListener(Events.Select, new Listener<TabPanelEvent>() {
@@ -73,6 +57,7 @@ public class OrderEditPanel extends FormPanel {
 			public void handleEvent(TabPanelEvent be) {
 				OrdersInquiryEvents.ClickOrderEditorTab event = new OrdersInquiryEvents.ClickOrderEditorTab(be
 						.getItem().getId());
+				GWT.log("customerRef=" + getData("customerRef"));
 				event.setData(getData("customerRef"));
 				dispatcher.dispatch(event);
 			}
@@ -81,15 +66,17 @@ public class OrderEditPanel extends FormPanel {
 		orderDetailsTab.addListener(Events.Select, new Listener<TabPanelEvent>() {
 			@Override
 			public void handleEvent(TabPanelEvent be) {
+				GWT.log("orderRef=" + getData("orderRef"));
 				OrdersInquiryEvents.ClickOrderEditorTab event = new OrdersInquiryEvents.ClickOrderEditorTab(be
 						.getItem().getId());
+
 				event.setData(getData("orderRef"));
 				dispatcher.dispatch(event);
 			}
 		});
 
 		add(tabPanel);
-		setTopComponent(tabPanel);
+		// setTopComponent(tabPanel);
 
 
 		Button btnCancel = new Button("Cancel");

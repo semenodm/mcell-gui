@@ -24,9 +24,14 @@ class EnqueryService {
 						'action',
 						'domain',
 						'controller',
-						'entity'
-					].contains(it.getKey()))
-						'eq'(it.getKey(), it.getValue())
+						'entity',
+						'sortField',
+						'sortDir'
+					].contains(it.getKey())){
+						def val = it.getValue()?.split(':')
+						println("val = $val")
+						"${val[0]}" (it.getKey(), val[1])
+					}
 				}
 			}
 		}

@@ -30,8 +30,8 @@ class OrdersRESTTest extends GroovyTestCase {
 		def response
 		response = client.get(
 				path: "orders",
-				params: [number: "000-00000-01",
-					orderType: "Main Stoarage"],
+				params: [number: "eq:000-00000-01",
+					orderType: "eq:Main Stoarage"],
 				requestContentType : ContentType.JSON.toString()
 				)
 		assertThat(response.responseData.data.size(), is(1))
