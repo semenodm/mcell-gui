@@ -97,7 +97,7 @@ public class OrdersEnqueryPanel extends ContentPanel {
 		fieldPanel.ensureDebugId("SELLER_FIELD");
 
 		queryFieldBuilder = new EnquieryFieldPanel.QueryFieldBuilder();
-		queryFieldBuilder.setEnqueryFieldLabel("Outlet Name").setEnqueryFieldName("customerAddres")
+		queryFieldBuilder.setEnqueryFieldLabel("Outlet Address").setEnqueryFieldName("customerAddres")
 				.addQueryOperator(EQ)
 				.addQueryOperator(LIKE);
 		fieldPanel = queryFieldBuilder.build();
@@ -111,6 +111,21 @@ public class OrdersEnqueryPanel extends ContentPanel {
 		enqueryPanel.add(fieldPanel, layoutData);
 		paramHolders.add(fieldPanel);
 		fieldPanel.ensureDebugId("ORDER_STATUS_FIELD");
+
+		queryFieldBuilder = new EnquieryFieldPanel.QueryFieldBuilder();
+		queryFieldBuilder.setEnqueryFieldLabel("Order Type").setEnqueryFieldName("orderType").addQueryOperator(EQ);
+		fieldPanel = queryFieldBuilder.build();
+		enqueryPanel.add(fieldPanel, layoutData);
+		paramHolders.add(fieldPanel);
+		fieldPanel.ensureDebugId("ORDER_TYPE_FIELD");
+
+		queryFieldBuilder = new EnquieryFieldPanel.QueryFieldBuilder();
+		queryFieldBuilder.setEnqueryFieldLabel("Order Description").setEnqueryFieldName("description")
+				.addQueryOperator(LIKE);
+		fieldPanel = queryFieldBuilder.build();
+		enqueryPanel.add(fieldPanel, layoutData);
+		paramHolders.add(fieldPanel);
+		fieldPanel.ensureDebugId("ORDER_DESCRIPTION_FIELD");
 
 		ButtonBar buttonBar = new ButtonBar();
 		buttonBar.setAlignment(HorizontalAlignment.CENTER);
